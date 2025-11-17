@@ -6,6 +6,7 @@ const arxivMap = {
   'EchigoCauligiEtAl2025a': '2412.06816',
   'EchigoCauligiEtAl2024': '2404.16269',
   'SzatmariCauligi2025': '2404.02289',
+  'LozanoCuadraEtAl2025': '2510.20436',
   'BridenChoiEtAl2025': '2312.14336',
   'BridenGurgaEtAl2024b': '2311.05135',
   'AthaSwanEtAl2024': '2405.01673',
