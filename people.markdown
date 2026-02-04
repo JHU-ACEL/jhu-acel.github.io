@@ -82,6 +82,15 @@ permalink: /people/
   </div>
 </div>
 
+<div class="student-container" onclick="toggleBio('bio-nunna')">
+  <img src="../assets/img/rnunna.jpg" alt="Rahul Nunna" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;">
+  <br><strong>Rahul Nunna</strong>
+  <div id="bio-nunna" class="student-bio">
+    <h4>Masters Student</h4>
+    <p>Rahul is a second-year Robotics MSE Student with a B.S. in Computer Engineering from Fresno State. He is interested in developing learning-based control methods for robot navigation and landing in unseen extreme environments.</p>
+  </div>
+</div>
+
 <div class="student-container" onclick="toggleBio('bio-schwartz')">
   <img src="../assets/img/pschwartz.jpeg" alt="Patrick Schwartz" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;">
   <br><strong>Patrick Schwartz</strong>
