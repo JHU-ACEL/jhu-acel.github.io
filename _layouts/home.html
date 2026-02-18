@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -23,55 +24,48 @@
         </div>
     </nav>
 
-    <!-- Slideshow Section -->
-    <div class="slideshow-container">
-        <!-- Slide 1 -->
-        <div class="slide active">
-            <div class="slide-background" style="background-image: url('{{ '/assets/img/cadre.jpg' | relative_url }}');"></div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="slide">
-            <div class="slide-background" style="background-image: url('{{ '/assets/img/astrobee.png' | relative_url }}');"></div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <button class="slideshow-arrow slideshow-prev" onclick="changeSlide(-1)">❮</button>
-        <button class="slideshow-arrow slideshow-next" onclick="changeSlide(1)">❯</button>
-
-        <!-- Navigation Dots -->
-        <div class="slideshow-nav">
-            <span class="slideshow-dot active" onclick="currentSlide(0)"></span>
-            <span class="slideshow-dot" onclick="currentSlide(1)"></span>
-        </div>
+    <!-- Single Hero Image -->
+    <div class="hero-image-container">
+        <img src="{{ '/assets/img/index_hero.png' | relative_url }}" alt="ACE Lab Robot" class="hero-image">
     </div>
 
     <!-- Main Content -->
-    <main class="main-content">
-        {{ content }}
-    </main>
+    <main class="home-main">
+        <p>{{ content }}</p>
 
-    <!-- News Section -->
-    <section class="news-section">
-        <div class="container">
-            <h2>Latest News</h2>
-            <div class="news-grid">
-                {% assign posts = site.posts | slice: 0, 3 %}
-                {% for post in posts %}
-                <div class="news-card">
-                    <div class="news-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-                    <p> {{post.content}} </p>
-                </div>
+        <!-- News Section -->
+        <section class="news-list-section">
+            <h2><b>News</b></h2>
+            <ul class="news-list fa-ul">
+                {% assign recent_posts = site.posts | slice: 0, 8 %}
+                {% for post in recent_posts %}
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <b>[{{ post.date | date: "%b %Y" }}]</b>&nbsp; {{ post.content | strip_html | strip }}
+                </li>
                 {% endfor %}
-                
-                {% if site.posts.size == 0 %}
-                <div class="news-card">
-                    <p>No news posts yet. Check back soon!</p>
+            </ul>
+
+            {% if site.posts.size > 8 %}
+            <ul class="news-list fa-ul">
+                <li style="list-style:none; padding-left:0;">
+                    <button class="news-toggle-btn" onclick="toggleOlderNews()">
+                        <i class="fa fa-chevron-down"></i> See More
+                    </button>
+                </li>
+                <div id="older-news" style="display:none;">
+                    {% assign older_posts = site.posts | slice: 8, 100 %}
+                    {% for post in older_posts %}
+                    <li>
+                        <i class="fa fa-chevron-right"></i>
+                        <b>[{{ post.date | date: "%b %Y" }}]</b>&nbsp; {{ post.content | strip_html | strip }}
+                    </li>
+                    {% endfor %}
                 </div>
-                {% endif %}
-            </div>
-        </div>
-    </section>
+            </ul>
+            {% endif %}
+        </section>
+    </main>
 
     <div class="blue-stripe">
         <div class="container">
@@ -92,7 +86,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -102,34 +96,17 @@
     </footer>
 
     <script>
-        let slideIndex = 0;
-        const slides = document.getElementsByClassName("slide");
-        const dots = document.getElementsByClassName("slideshow-dot");
-
-        function showSlides() {
-            // Hide all slides and dots
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-                dots[i].classList.remove("active");
+        function toggleOlderNews() {
+            var el = document.getElementById("older-news");
+            var btn = document.querySelector(".news-toggle-btn");
+            if (el.style.display === "none") {
+                el.style.display = "block";
+                btn.innerHTML = '<i class="fa fa-chevron-up"></i> See Less';
+            } else {
+                el.style.display = "none";
+                btn.innerHTML = '<i class="fa fa-chevron-down"></i> See More';
             }
-
-            // Show current slide and dot
-            slides[slideIndex].classList.add("active");
-            dots[slideIndex].classList.add("active");
         }
-
-        function changeSlide(n) {
-            slideIndex = (slideIndex + n + slides.length) % slides.length;
-            showSlides();
-        }
-
-        function currentSlide(n) {
-            slideIndex = n;
-            showSlides();
-        }
-
-        // Auto advance slides every 5 seconds
-        setInterval(() => changeSlide(1), 5000);
     </script>
 </body>
-</html> 
+</html>
