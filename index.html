@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACE Lab</title>
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -23,65 +24,57 @@
         </div>
     </nav>
 
-    <!-- Slideshow Section -->
-    <div class="slideshow-container">
-        <!-- Slide 1 -->
-        <div class="slide active">
-            <div class="slide-background" style="background-image: url('/assets/img/cadre.jpg');"></div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="slide">
-            <div class="slide-background" style="background-image: url('/assets/img/astrobee.png');"></div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <button class="slideshow-arrow slideshow-prev" onclick="changeSlide(-1)">❮</button>
-        <button class="slideshow-arrow slideshow-next" onclick="changeSlide(1)">❯</button>
-
-        <!-- Navigation Dots -->
-        <div class="slideshow-nav">
-            <span class="slideshow-dot active" onclick="currentSlide(0)"></span>
-            <span class="slideshow-dot" onclick="currentSlide(1)"></span>
-        </div>
+    <!-- Single Hero Image -->
+    <div class="hero-image-container">
+        <img src="/assets/img/index_hero.png" alt="ACE Lab Robot" class="hero-image">
     </div>
 
     <!-- Main Content -->
-    <main class="main-content">
-        <p>Welcome to the Autonomous Control &amp; Exploration (ACE) Lab at Johns Hopkins University! Our lab is focused on computationally efficient algorithms to enable mobile and spacecraft robotic decision making.</p>
+    <main class="home-main">
+        <p><p>Welcome to the Autonomous Control &amp; Exploration (ACE) Lab at Johns Hopkins University! Our lab is focused on computationally efficient algorithms to enable mobile and spacecraft robotic decision making.</p>
+</p>
 
+        <!-- News Section -->
+        <section class="news-list-section">
+            <h2><b>News</b></h2>
+            <ul class="news-list fa-ul">
+                
+                
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <b>[Aug 2025]</b>&nbsp; Our paper on Principled Stochastic Trajectory Planning for Asteroid Reconnaissance was accepted into Journal of Guidance, Control, and Dynamics (JGCD)!
+                </li>
+                
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <b>[May 2025]</b>&nbsp; Our paper on Constraint-Informed Learning for Warm Starting Trajectory Optimization was accepted into Journal of Guidance, Control, and Dynamics (JGCD)!
+                </li>
+                
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <b>[Mar 2025]</b>&nbsp; Our paper on Transformer-Based Tight Constraint Prediction for Efficient Powered Descent Guidance was accepted into Journal of Guidance, Control, and Dynamics (JGCD)!
+                </li>
+                
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <b>[Oct 2024]</b>&nbsp; Congratulations to Kazu Echigo for being a AIAA SciTech GNC Graduate Paper competition finalist for our paper on stochastic optimal control!
+                </li>
+                
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <b>[Jun 2024]</b>&nbsp; Excited to announce that I’ll be joining Johns Hopkins Mechanical Engineering as an assistant professor starting in July 2025!
+                </li>
+                
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <b>[May 2023]</b>&nbsp; Our paper on testing gecko adhesives on the ISS was awarded the IEEE Robotics and Automation Magazine Best Paper Award!
+                </li>
+                
+            </ul>
+
+            
+        </section>
     </main>
-
-    <!-- News Section -->
-    <section class="news-section">
-        <div class="container">
-            <h2>Latest News</h2>
-            <div class="news-grid">
-                
-                
-                <div class="news-card">
-                    <div class="news-date">August 25, 2025</div>
-                    <p> <p>Our paper on Principled Stochastic Trajectory Planning for Asteroid Reconnaissance was accepted into Journal of Guidance, Control, and Dynamics (JGCD)!</p>
- </p>
-                </div>
-                
-                <div class="news-card">
-                    <div class="news-date">May 19, 2025</div>
-                    <p> <p>Our paper on <a href="https://arxiv.org/abs/2312.14336">Constraint-Informed Learning for Warm Starting Trajectory Optimization</a> was accepted into Journal of Guidance, Control, and Dynamics (JGCD)!</p>
- </p>
-                </div>
-                
-                <div class="news-card">
-                    <div class="news-date">March 22, 2025</div>
-                    <p> <p>Our paper on <a href="https://arc.aiaa.org/doi/10.2514/1.G008302">Transformer-Based Tight Constraint Prediction for Efficient Powered Descent Guidance</a> was accepted into Journal of Guidance, Control, and Dynamics (JGCD)!</p>
- </p>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-    </section>
 
     <div class="blue-stripe">
         <div class="container">
@@ -102,7 +95,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -112,34 +105,17 @@
     </footer>
 
     <script>
-        let slideIndex = 0;
-        const slides = document.getElementsByClassName("slide");
-        const dots = document.getElementsByClassName("slideshow-dot");
-
-        function showSlides() {
-            // Hide all slides and dots
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-                dots[i].classList.remove("active");
+        function toggleOlderNews() {
+            var el = document.getElementById("older-news");
+            var btn = document.querySelector(".news-toggle-btn");
+            if (el.style.display === "none") {
+                el.style.display = "block";
+                btn.innerHTML = '<i class="fa fa-chevron-up"></i> See Less';
+            } else {
+                el.style.display = "none";
+                btn.innerHTML = '<i class="fa fa-chevron-down"></i> See More';
             }
-
-            // Show current slide and dot
-            slides[slideIndex].classList.add("active");
-            dots[slideIndex].classList.add("active");
         }
-
-        function changeSlide(n) {
-            slideIndex = (slideIndex + n + slides.length) % slides.length;
-            showSlides();
-        }
-
-        function currentSlide(n) {
-            slideIndex = n;
-            showSlides();
-        }
-
-        // Auto advance slides every 5 seconds
-        setInterval(() => changeSlide(1), 5000);
     </script>
 </body>
-</html> 
+</html>
