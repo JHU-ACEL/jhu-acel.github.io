@@ -17,6 +17,9 @@ If you're interested in joining us for a research rotation, then please email Pr
 - What specific technical or topic areas you want to learn about
 3. Please include your CV and unofficial transcript.
 
+### Lab Meetings
+Our lab meetings are held throughout the academic semester and are open to all students. Students interested in attending may subscribe to acelab-list@lists.jh.edu to receive meeting details.
+
 ### Collaborators
 Thank you for considering a collaboration with the ACE Lab! If you're interested in engaging in a research collaboration, please email Prof. Cauligi with information on which project/research direction you would like to collaborate on.
 
