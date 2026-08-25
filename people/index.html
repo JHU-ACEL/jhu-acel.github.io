@@ -81,18 +81,20 @@
 .student-bio.active {
   display: block;
 }
+
+.alumni-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.alumni-list li {
+  margin-bottom: 8px;
+}
 </style>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+<h3 id="doctoral-students">Doctoral Students</h3>
 
-<div class="student-container" onclick="toggleBio('bio-chien')">
-  <img src="../assets/img/bchien.png" alt="Brian Chien" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
-  <br /><strong>Brian Chien</strong>
-  <div id="bio-chien" class="student-bio">
-    <h4>Master's Student</h4>
-    <p>Brian Chien is a master's student in Robotics. He is interested in learning-based path planning and control for field robots so that they can adapt safely and robustly in uncertain environments.</p>
-  </div>
-</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
 
 <div class="student-container" onclick="toggleBio('bio-kodey')">
   <img src="../assets/img/skodey.jpeg" alt="Sriram Kodey" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
@@ -100,33 +102,6 @@
   <div id="bio-kodey" class="student-bio">
     <h4>PhD Student</h4>
     <p>Sriram is a first-year PhD student with an MS in Mechanical Engineering from the University of Washington, Seattle, and a BE from BITS Pilani. His research interests lie at the intersection of AI and control theory for autonomous systems.</p>
-  </div>
-</div>
-
-<div class="student-container" onclick="toggleBio('bio-lihn')">
-  <img src="../assets/img/slihn.jpg" alt="Samuel Lihn" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
-  <br /><strong>Samuel Lihn</strong>
-  <div id="bio-lihn" class="student-bio">
-    <h4>Undergraduate Student</h4>
-    <p>Samuel is a Mechanical Engineering undergraduate and Robotics BS/MSE student in the Class of 2027. His interests include GPU-accelerated motion planning and control as well as full-stack software and hardware integration.</p>
-  </div>
-</div>
-
-<div class="student-container" onclick="toggleBio('bio-lozano')">
-  <img src="../assets/img/Lozano.jpeg" alt="Federico Lozano Cuadra" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
-  <br /><strong>Federico Lozano Cuadra</strong>
-  <div id="bio-lozano" class="student-bio">
-    <h4>PhD Student</h4>
-    <p>Federico is a visiting Fulbright PhD student from the University of Málaga (UMA). He holds an M.Sc. in telecommunication engineering from UMA. During his PhD, he has collaborated with ESA and completed two research stays at NASA JPL in 2025 and 2026. His research focuses on machine learning for space communication networks, and he is also interested in entrepreneurship.</p>
-  </div>
-</div>
-
-<div class="student-container" onclick="toggleBio('bio-nunna')">
-  <img src="../assets/img/rnunna.jpg" alt="Rahul Nunna" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
-  <br /><strong>Rahul Nunna</strong>
-  <div id="bio-nunna" class="student-bio">
-    <h4>Masters Student</h4>
-    <p>Rahul is a second-year Robotics MSE Student with a B.S. in Computer Engineering from Fresno State. He is interested in using generative machine learning methods for robot navigation in unseen extreme environments.</p>
   </div>
 </div>
 
@@ -139,12 +114,51 @@
   </div>
 </div>
 
+</div>
+
+<h3 id="ms-students">MS Students</h3>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+
+<div class="student-container" onclick="toggleBio('bio-chien')">
+  <img src="../assets/img/bchien.png" alt="Brian Chien" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
+  <br /><strong>Brian Chien</strong>
+  <div id="bio-chien" class="student-bio">
+    <h4>Master's Student</h4>
+    <p>Brian Chien is a master's student in Robotics. He is interested in learning-based path planning and control for field robots so that they can adapt safely and robustly in uncertain environments.</p>
+  </div>
+</div>
+
+<div class="student-container" onclick="toggleBio('bio-nunna')">
+  <img src="../assets/img/rnunna.jpg" alt="Rahul Nunna" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
+  <br /><strong>Rahul Nunna</strong>
+  <div id="bio-nunna" class="student-bio">
+    <h4>Masters Student</h4>
+    <p>Rahul is a second-year Robotics MSE Student with a B.S. in Computer Engineering from Fresno State. He is interested in using generative machine learning methods for robot navigation in unseen extreme environments.</p>
+  </div>
+</div>
+
+</div>
+
+<h3 id="undergraduate-students">Undergraduate Students</h3>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+
+<div class="student-container" onclick="toggleBio('bio-lihn')">
+  <img src="../assets/img/slihn.jpg" alt="Samuel Lihn" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
+  <br /><strong>Samuel Lihn</strong>
+  <div id="bio-lihn" class="student-bio">
+    <h4>Undergraduate Student</h4>
+    <p>Samuel is a Mechanical Engineering undergraduate and Robotics BS/MSE student in the Class of 2027. His interests include GPU-accelerated motion planning and control as well as full-stack software and hardware integration.</p>
+  </div>
+</div>
+
 <div class="student-container" onclick="toggleBio('bio-shi')">
   <img src="../assets/img/cshi.jpg" alt="Casey Shi" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
   <br /><strong>Casey Shi</strong>
   <div id="bio-shi" class="student-bio">
     <h4>Undergraduate Student</h4>
-    <p>Casey a Mechanical Engineering undergraduate ('26) at Johns Hopkins University and is enrolled in the combined BS/MSE program in Robotics. Her interests include robotic system design and is currently developing a custom quadrotor drone. </p> 
+    <p>Casey a Mechanical Engineering undergraduate ('26) at Johns Hopkins University and is enrolled in the combined BS/MSE program in Robotics. Her interests include robotic system design and is currently developing a custom quadrotor drone. </p>
   </div>
 </div>
 
@@ -154,6 +168,21 @@
   <div id="bio-ventrudo" class="student-bio">
     <h4>Undergraduate Student</h4>
     <p>Erin ('27) is a Mechanical Engineering undergraduate interested in pursuing aerospace and robotics in extreme environments.</p>
+  </div>
+</div>
+
+</div>
+
+<h3 id="visiting-students">Visiting Students</h3>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+
+<div class="student-container" onclick="toggleBio('bio-lozano')">
+  <img src="../assets/img/Lozano.jpeg" alt="Federico Lozano Cuadra" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;" />
+  <br /><strong>Federico Lozano Cuadra</strong>
+  <div id="bio-lozano" class="student-bio">
+    <h4>PhD Student</h4>
+    <p>Federico is a visiting Fulbright PhD student from the University of Málaga (UMA). He holds an M.Sc. in telecommunication engineering from UMA. During his PhD, he has collaborated with ESA and completed two research stays at NASA JPL in 2025 and 2026. His research focuses on machine learning for space communication networks, and he is also interested in entrepreneurship.</p>
   </div>
 </div>
 
@@ -175,6 +204,13 @@ function toggleBio(bioId) {
 }
 </script>
 
+<h3 id="alumni">Alumni</h3>
+
+<h4 id="ms-alumni">MS Alumni</h4>
+
+<ul class="alumni-list">
+  <li><em>Rahul Kalpana Anwardeen (2025—2026) </em></li>
+</ul>
 
     </main>
 
