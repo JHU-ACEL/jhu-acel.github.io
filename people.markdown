@@ -127,6 +127,15 @@ permalink: /people/
   </div>
 </div>
 
+<div class="student-container" onclick="toggleBio('bio-kammerer')">
+  <img src="../assets/img/kammerer.jpg" alt="Samantha Kammerer" style="width: 187.5px; height: 187.5px; object-fit: cover; border-radius: 8px;">
+  <br><strong>Samantha Kammerer</strong>
+  <div id="bio-kammerer" class="student-bio">
+    <h4>Masters Student</h4>
+    <p>Samantha is a second-year Robotics MSE Student with a B.S. in Mechanical Engineering from the University of West Florida. She is interested in adaptive controls for spacecraft systems. </p> 
+  </div>
+</div>
+
 </div>
 
 <script>
